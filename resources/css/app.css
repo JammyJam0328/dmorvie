@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+  .button-primary{
+    @apply p-2 rounded-lg bg-gray-100
+  }
+}
