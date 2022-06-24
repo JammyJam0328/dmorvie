@@ -20,6 +20,8 @@
         crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+        rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet"
         href="{{ mix('css/app.css') }}">
@@ -31,7 +33,7 @@
         defer></script>
 </head>
 
-<body class="antialiased text-gray-700 font-inter">
+<body class="antialiased text-gray-700 bg-gray-100 font-poppins">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <!--
   This example requires updating your template:
@@ -262,8 +264,36 @@
             </main>
         </div>
     </div>
-
+    <x-dialog z-index="z-50"
+        blur="md"
+        align="center" />
+    <x-notifications z-index="z-50" />
     @livewireScripts
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var loading_spinner = document.getElementById('global_spinner');
+            var body_tag = document.getElementsByTagName('body')[0];
+            Livewire.hook('message.sent', (message, component) => {
+                loading_spinner.classList.add('animate-spin');
+                body_tag.classList.add('cursor-progress');
+            })
+
+            Livewire.hook('message.failed', (message, component) => {
+                loading_spinner.classList.remove('animate-spin');
+                body_tag.classList.remove('cursor-progress');
+            })
+
+            Livewire.hook('message.received', (message, component) => {
+                loading_spinner.classList.remove('animate-spin');
+                body_tag.classList.remove('cursor-progress');
+            })
+
+            Livewire.hook('message.processed', (message, component) => {
+                loading_spinner.classList.remove('animate-spin');
+                body_tag.classList.remove('cursor-progress');
+            })
+        });
+    </script>
 </body>
 
 </html>
