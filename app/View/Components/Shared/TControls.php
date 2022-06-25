@@ -1,13 +1,11 @@
 <?php
 
-namespace App\View\Components\SuperAdmin;
+namespace App\View\Components\Shared;
 
 use Illuminate\View\Component;
 
-class StaticNav extends Component
+class TControls extends Component
 {
-    public $nav_class="";
-    public $active_nav_class="bg-indigo-800 text-white flex items-center px-2 py-2 text-sm font-medium  rounded-md  group";
     /**
      * Create a new component instance.
      *
@@ -25,6 +23,6 @@ class StaticNav extends Component
      */
     public function render()
     {
-        return view('components.super-admin.static-nav');
+        return view('components.shared.t-controls');
     }
 }

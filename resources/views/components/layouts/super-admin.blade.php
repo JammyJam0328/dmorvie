@@ -33,7 +33,7 @@
         defer></script>
 </head>
 
-<body class="antialiased text-gray-700 bg-gray-100 font-poppins">
+<body class="antialiased text-gray-700 bg-gray-200 font-poppins">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <!--
   This example requires updating your template:

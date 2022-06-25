@@ -1,9 +1,9 @@
 @props(['title', 'count'])
-<div class="bg-white overflow-hidden shadow-gray-200 shadow border rounded-lg">
+<div class="overflow-hidden bg-white border shadow card shadow-gray-200 rounded-xl">
     <div class="p-5">
         <div class="grid space-y-2">
             <div class="flex">
-                <div class="p-2 rounded-lg bg-gray-600 text-white ">
+                <div class="p-3 bg-gray-300 rounded-lg ">
                     {{ $icon }}
                 </div>
             </div>

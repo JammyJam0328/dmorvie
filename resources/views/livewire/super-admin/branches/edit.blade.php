@@ -1,7 +1,6 @@
-<div id="create_branch"
-    x-on:create-branch.window="$wire.set('create_branch_modal',true)">
-    <x-modal.card wire:model.defer="create_branch_modal"
-        title="Create Branch">
+<div id="edit_branch">
+    <x-modal.card wire:model.defer="edit_branch_modal"
+        title="Update Branch">
         <form>
             @csrf
             <div id="form-fields"
@@ -19,6 +18,10 @@
                 <x-input type="email"
                     wire:model.defer="email"
                     label="Email" />
+                <hr>
+                <x-input type="password"
+                    wire:model.defer="password"
+                    label="Confirm Password" />
             </div>
         </form>
         <x-slot name="footer">

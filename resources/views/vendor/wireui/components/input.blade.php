@@ -29,9 +29,9 @@ $hasError = !$errorless && $name && $errors->has($name);
                 @if ($icon)
                     <x-dynamic-component :component="WireUi::component('icon')"
                         :name="$icon"
-                        class="h-5 w-5" />
+                        class="w-5 h-5" />
                 @elseif($prefix)
-                    <span class="pl-1 flex items-center self-center">
+                    <span class="flex items-center self-center pl-1">
                         {{ $prefix }}
                     </span>
                 @endif
@@ -42,6 +42,7 @@ $hasError = !$errorless && $name && $errors->has($name);
 
         <input
             {{ $attributes->class([$getInputClasses($hasError)])->merge([
+                'class' => 'focus:ring-gray-500 focus:border-gray-500',
                 'type' => 'text',
                 'autocomplete' => 'off',
             ]) }} />
@@ -53,15 +54,15 @@ $hasError = !$errorless && $name && $errors->has($name);
                 @if ($rightIcon)
                     <x-dynamic-component :component="WireUi::component('icon')"
                         :name="$rightIcon"
-                        class="h-5 w-5" />
+                        class="w-5 h-5" />
                 @elseif ($suffix)
-                    <span class="pr-1 flex items-center justify-center">
+                    <span class="flex items-center justify-center pr-1">
                         {{ $suffix }}
                     </span>
                 @elseif ($hasError)
                     <x-dynamic-component :component="WireUi::component('icon')"
                         name="exclamation-circle"
-                        class="h-5 w-5" />
+                        class="w-5 h-5" />
                 @endif
             </div>
         @elseif ($append)

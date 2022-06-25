@@ -5,7 +5,7 @@
             {{ $title }}
         </h1>
         <div class="flex space-x-3">
-            <button class="button-primary text-gray-600">
+            <button class="text-gray-600 shadow button-primary">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     class="w-5 h-5 "
                     viewBox="0 0 20 20"
@@ -14,9 +14,9 @@
                         d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
                 </svg>
             </button>
-            <button class="button-primary text-gray-600">
+            <button class="text-gray-600 shadow button-primary">
                 <svg xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    class="w-5 h-5"
                     viewBox="0 0 20 20"
                     fill="currentColor">
                     <path fill-rule="evenodd"
@@ -24,11 +24,11 @@
                         clip-rule="evenodd" />
                 </svg>
             </button>
-            <button class="button-primary text-gray-600">
+            <button class="text-gray-600 shadow button-primary">
                 <svg id="global_spinner"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    class="h-5 w-5 fill-gray-600">
+                    class="w-5 h-5 fill-gray-600">
                     <path fill="none"
                         d="M0 0h24v24H0z" />
                     <path

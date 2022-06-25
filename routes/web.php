@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\{Role,Branch};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +41,12 @@ Route::prefix('/super-admin')->middleware([
     })->name('super-admin.branches');
 
     Route::get('/users',function(){
-        return view('super-admin.users');
+        $roles=Role::all();
+        $branches=Branch::all();
+        return view('super-admin.users',[
+            'roles'=>$roles,
+            'branches'=>$branches,
+        ]);
     })->name('super-admin.users');
     Route::get('/reports',function(){
         return view('super-admin.reports');
