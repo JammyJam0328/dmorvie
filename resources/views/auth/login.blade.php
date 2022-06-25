@@ -55,7 +55,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>D'Morvie Suites</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -70,12 +70,15 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="font-sans antialiased bg-gray-100 h-screen overflow-y-hidden">
+<body class="antialiased bg-gradient-to-tr from-gray-100 to-gray-300 font-inter h-screen overflow-y-hidden">
     <div class="absolute text-center bottom-10 right-10">
         <h1 class="text-sm text-gray-500 font-inter font-bold">POWERED BY: J7 IT SOLUTION</h1>
     </div>
+    <div class="absolute text-center -bottom-10 -left-10">
+        <img src="{{asset('images/dmorvielogo.png')}}" class="h-1/6 opacity-10" alt="">
+    </div>
 
-    <div class="relative h-full flex items-center justify-center">
+    <div class="relative h-full flex items-center shadow-2xl justify-center">
         <div class="bg-white rounded-l-3xl p-5 border-r-2 border-gray-100 h-4/5 w-96">
             <img src="{{ asset('images/HR.jpg') }}" class="h-20 rounded-md" alt="">
             <div class="flex justify-center mt-14">
@@ -402,10 +405,13 @@
                         fill="#57b894" />
                 </svg>
             </div>
-            <h1 class="text-center font-bold text-3xl border-b-2 text-gray-700 font-inter border-main mt-10">D'MORVIE SUITES</h1>
+            <h1 class="text-center font-bold text-3xl border-b-2 text-blue-900 font-inter border-main mt-10">D'MORVIE SUITES</h1>
+            <h1 class="text-center font-semibold   text-gray-700 font-inter border-main ">Your Cheaper and
+                Satisfying Stay in Town</h1>
 
         </div>
-        <div class="bg-white rounded-r-3xl h-4/5 w-2/6 p-16 pt-28">
+        <div class="bg-white rounded-r-3xl h-4/5  w-2/6 p-16 pt-28">
+            <img src="{{asset('images/dmorvielogo.png')}}" class="h-10" alt="">
             <h1 class="font-bold text-2xl text-gray-700">Get's Started.</h1>
         
            
