@@ -14,7 +14,6 @@
                     suffix="hours"
                     label="Hours"
                     placeholder="ex.6" />
-                Add
                 <x-native-select label="Select Type"
                     wire:model.defer="type_id">
                     <option value=""></option>
