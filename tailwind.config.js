@@ -21,6 +21,11 @@ module.exports = {
                 inter: ['Inter', ...defaultTheme.fontFamily.sans],
                 poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'default-x': '#e0eeec',
+                'primary-x': '#408a84',
+                'secondary-x': '#64748b',
+            }
         },
     },
 

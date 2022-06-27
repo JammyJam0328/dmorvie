@@ -23,14 +23,22 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        switch (auth()->user()->role_id) {
+            case 1:
+                return redirect()->route('super-admin.dashboard');
+                break;
+            case 2:
+                return redirect()->route('branch-admin.dashboard');
+                break;
+        }
     })->name('dashboard');
 });
 
 Route::prefix('/super-admin')->middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
+    'super_admin'
 ])->group(function () {
     Route::get('/dashboard',function(){
         return view('super-admin.dashboard');
@@ -65,4 +73,34 @@ Route::prefix('/kiosk')->middleware([
     Route::get('/reports',function(){
         return view('kiosk.reports');
     })->name('kiosk.reports');
+});
+Route::prefix('/branch-admin')->middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+    'branch_admin'
+])->group(function () {
+    Route::get('/dashboard',function(){
+        return view('branch-admin.dashboard');
+    })->name('branch-admin.dashboard');
+    Route::get('/rooms',function(){
+        $floors = \App\Models\Floor::where('branch_id',auth()->user()->branch_id)->get('id','number');
+        $statuses = \App\Models\Status::all();
+        return view('branch-admin.rooms',[
+            'floors'=>$floors,
+            'statuses'=>$statuses,
+        ]); 
+    })->name('branch-admin.rooms');
+    Route::get('/checkin',function(){
+        return view('branch-admin.checkin');
+    })->name('branch-admin.checkin');
+    Route::get('/inhouse',function(){
+        return view('branch-admin.inhouse');
+    })->name('branch-admin.inhouse');
+    Route::get('/rates',function(){
+        $types = \App\Models\Type::where('branch_id',auth()->user()->branch_id)->get('id','name','description');
+        return view('branch-admin.rates',[
+            'types'=>$types,
+        ]);
+    })->name('branch-admin.rates');
 });

@@ -9,4 +9,18 @@ class Room extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function room_rates()
+    {
+        return $this->hasMany(RoomRate::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+    public function floor()
+    {
+        return $this->belongsTo(Floor::class);
+    }
+    
 }

@@ -59,13 +59,16 @@ class Edit extends Component
                 'cellphone'=>$this->cellphone,
                 'email'=>$this->email,
             ]);
+            $this->reset([
+                'name','address','telephone','cellphone','email',
+            ]);
             $this->edit_branch_modal=false;
             $this->notification([
                 'title'=>'Success',
                 'description'=>'Branch updated successfully',
                 'icon'=>'success'
             ]);
-            $this->reset();
+            activity()->log('Updated a branch');
             $this->emit('refreshList');
         }
     }

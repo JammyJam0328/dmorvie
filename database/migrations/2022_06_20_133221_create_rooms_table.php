@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('branch_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('floor_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('status_id');
-            $table->foreignId('rate_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('number');
             $table->timestamps();
         });

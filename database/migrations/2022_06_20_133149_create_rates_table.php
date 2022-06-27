@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('rates', function (Blueprint $table) {
             $table->id();
             $table->foreignId('branch_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('type_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('hours');
             $table->string('price');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
