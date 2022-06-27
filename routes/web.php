@@ -52,3 +52,17 @@ Route::prefix('/super-admin')->middleware([
         return view('super-admin.reports');
     })->name('super-admin.reports');
 });
+
+Route::prefix('/kiosk')->middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/select-transaction',function(){
+        return view('kiosk.transaction');
+    })->name('kiosk.transaction');
+
+    Route::get('/reports',function(){
+        return view('kiosk.reports');
+    })->name('kiosk.reports');
+});
