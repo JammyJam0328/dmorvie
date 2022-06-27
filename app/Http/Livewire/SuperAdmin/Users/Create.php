@@ -34,12 +34,16 @@ class Create extends Component
             'role_id'=>$this->role_id,
             'branch_id'=>$this->branch_id,
         ]);
-        $this->reset();
+        $this->reset([
+            'name','email','password','role_id','branch_id',
+        ]);
+        $this->create_user_modal=false;
         $this->notification([
             'title'=>'Success',
             'description'=>'User created successfully',
             'icon'=>'success',
         ]);
+        activity()->log('Created a new user');
         $this->emit('refreshList');
     }
 }
