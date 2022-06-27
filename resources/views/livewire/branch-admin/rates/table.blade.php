@@ -56,12 +56,15 @@
                             </x-table.row>
                         @empty
                             <x-table.row>
-                                <x-table.data colspan="4">
+                                <x-table.data colspan="5">
                                     <h1 class="text-center"> No rates found.</h1>
                                 </x-table.data>
                             </x-table.row>
                         @endforelse
                     </x-table.body>
+                </x-slot>
+                <x-slot name="pagintation">
+                    {{ $rates->links() }}
                 </x-slot>
             </x-table.main>
         </div>

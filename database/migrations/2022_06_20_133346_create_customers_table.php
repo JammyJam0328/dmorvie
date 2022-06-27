@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('branch_id');
             $table->string('qr_code');
             $table->string('name');
             $table->string('check_in_time');
