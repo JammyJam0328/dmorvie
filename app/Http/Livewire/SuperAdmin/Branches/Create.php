@@ -33,12 +33,16 @@ class Create extends Component
             'email'=>$this->email,
         ]);
 
-        $this->reset();
+        $this->reset([
+            'name','address','telephone','cellphone','email',
+        ]);
+        $this->create_branch_modal=false;
         $this->notification([
             'title'=>'Success',
             'description'=>'Branch created successfully',
             'icon'=>'success',
         ]);
+        activity()->log('Created a new branch');
         $this->emit('refreshList');
     }
 }

@@ -9,4 +9,13 @@ class Floor extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
 }

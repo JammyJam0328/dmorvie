@@ -42,7 +42,7 @@ $hasError = !$errorless && $name && $errors->has($name);
 
         <input
             {{ $attributes->class([$getInputClasses($hasError)])->merge([
-                'class' => 'focus:ring-gray-500 focus:border-gray-500',
+                'class' => 'focus:ring-gray-500 focus:border-gray-500 focus:ring-gray-500',
                 'type' => 'text',
                 'autocomplete' => 'off',
             ]) }} />
