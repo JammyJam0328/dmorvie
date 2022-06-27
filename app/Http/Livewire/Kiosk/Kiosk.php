@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Kiosk;
 
 use Livewire\Component;
+use App\Models\Type;
 
 class Kiosk extends Component
 {
@@ -12,18 +13,21 @@ class Kiosk extends Component
     public $openRoom = false;
     public function render()
     {
-        return view('livewire.kiosk.kiosk');
+        return view('livewire.kiosk.kiosk', [
+            'types' => Type::where('branch_id', auth()->user()->branch_id)->get(),
+        ]);
     }
+
 
     public function selectHours($hours){
         $this->customer_transaction['hours'] = $hours;
-        $this->step = 2;
+        $this->step = 3;
         
     }
 
     public function selectRoomType($roomtype){
         $this->customer_transaction['roomtype'] = $roomtype;
-        $this->step = 3;    
+        $this->step = 2;    
     }
 
     public function closeTransaction(){

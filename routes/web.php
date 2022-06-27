@@ -30,6 +30,9 @@ Route::middleware([
             case 2:
                 return redirect()->route('branch-admin.dashboard');
                 break;
+            case 4:
+                return redirect()->route('kiosk.transaction');
+                break;
         }
     })->name('dashboard');
 });
@@ -66,7 +69,7 @@ Route::prefix('/kiosk')->middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/select-transaction',function(){
+    Route::get('/',function(){
         return view('kiosk.transaction');
     })->name('kiosk.transaction');
 
