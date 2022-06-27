@@ -8,5 +8,8 @@
                 </table>
             </div>
         </div>
+        <div class="mt-5">
+            {{ $pagination ?? '' }}
+        </div>
     </div>
 </div>

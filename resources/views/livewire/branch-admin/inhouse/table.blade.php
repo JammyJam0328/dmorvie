@@ -8,43 +8,36 @@
                 name="search"
                 id="search">
         </div>
-        <div class="flex space-x-2">
-            <x-button black
-                x-on:click="$dispatch('create-room')"
-                md
-                icon="plus">
-                Add rates
-            </x-button>
-        </div>
     </div>
     <div>
         <div class="mt-10">
             <x-table.main>
                 <x-slot name="heading">
                     <x-table.heading>
-                        <x-table.head label="Number" />
-                        <x-table.head label="Floor" />
-                        <x-table.head label="Status" />
+                        <x-table.head label="QR Code" />
+                        <x-table.head label="Customer Name" />
+                        <x-table.head label="Room" />
+                        <x-table.head label="Check In Date" />
                         <x-table.head />
                     </x-table.heading>
                 </x-slot>
                 <x-slot name="body">
                     <x-table.body>
-                        @forelse ($rooms as $room)
+                        @forelse ($customers as $customer)
                             <x-table.row>
                                 <x-table.data>
-                                    {{ $room->number }}
+                                    {{ $customer->qr_code }}
                                 </x-table.data>
                                 <x-table.data>
-                                    {{ $room->floor->number }}
+                                    {{ $customer->name }}
                                 </x-table.data>
                                 <x-table.data>
-                                    {{ $room->status->name }}
+                                    {{ $customer->check_in_time }}
                                 </x-table.data>
                                 <x-table.data>
                                     <div class="flex items-center justify-end space-x-2">
                                         <x-button.circle sm
-                                            wire:click="invoke_action({{ $room->id }})"
+                                            wire:click="invoke_action({{ $customer->id }})"
                                             flat
                                             icon="dots-horizontal"></x-button.circle>
                                     </div>
@@ -52,7 +45,7 @@
                             </x-table.row>
                         @empty
                             <x-table.row>
-                                <x-table.data colspan="4">
+                                <x-table.data colspan="5">
                                     <h1 class="text-center"> No rates found.</h1>
                                 </x-table.data>
                             </x-table.row>
@@ -60,12 +53,12 @@
                     </x-table.body>
                 </x-slot>
                 <x-slot name="pagintation">
-                    {{ $rooms->links() }}
+                    {{ $customers->links() }}
                 </x-slot>
             </x-table.main>
         </div>
     </div>
-    <div id="action_modal">
+    {{-- <div id="action_modal">
         <x-modal max-width="sm"
             blur="lg"
             wire:model.defer="action_modal">
@@ -78,5 +71,5 @@
                 </x-button>
             </div>
         </x-modal>
-    </div>
+    </div> --}}
 </div>

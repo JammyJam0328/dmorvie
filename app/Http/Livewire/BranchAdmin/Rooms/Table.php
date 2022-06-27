@@ -29,4 +29,49 @@ class Table extends Component
                             ->paginate(10)
         ]);
     }
+
+    public function invoke_action($id)
+    {
+        $this->selected_room_id=$id;
+        $this->action_modal=true;
+    }
+    public function edit_action()
+    {
+        if($this->selected_room_id){
+            $this->emit('edit_room',$this->selected_room_id);
+        }
+        $this->action_modal=false;
+    }
+
+    public function delete_action()
+    {
+        if($this->selected_room_id){
+            $this->dialog()->confirm([
+                'title'       => 'Are you Sure?',
+                'description' => 'You are about to delete this room',
+                'icon'        => 'question',
+                'accept'      => [
+                    'label'  => 'Yes, delete it',
+                    'method' => 'confirmDelete',
+                ],
+                'reject' => [
+                    'label'  => 'No, cancel',
+                ],
+            ]);
+        }
+        $this->action_modal=false;
+    }
+
+    public function confirmDelete()
+    {
+        $room = Room::where('id',$this->selected_room_id)->first();
+        $room->delete();
+
+        $this->notification([
+            'title'=>'Success',
+            'description'=>'Room deleted successfully',
+            'icon'=>'success'
+        ]);
+        $this->action_modal=false;
+    }
 }
