@@ -75,6 +75,21 @@ Route::prefix('/kiosk')->middleware([
     })->name('kiosk.reports');
 });
 
+<<<<<<< Updated upstream
+=======
+Route::prefix('/kitchen')->middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/',function(){
+        return view('kitchen.dashboard');
+    })->name('kitchen');
+});
+
+
+
+>>>>>>> Stashed changes
 
 
 // branch routes

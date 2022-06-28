@@ -2603,6 +2603,12 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
+<<<<<<< Updated upstream
+=======
+.bg-negative-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+>>>>>>> Stashed changes
 .bg-positive-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(16 185 129 / var(--tw-bg-opacity));
@@ -2749,6 +2755,11 @@ select {
 .fill-white {
   fill: #fff;
 }
+<<<<<<< Updated upstream
+=======
+.fill-gray-600 {
+  fill: #4b5563;
+>>>>>>> Stashed changes
 .fill-gray-50 {
   fill: #f9fafb;
 }
@@ -3583,15 +3594,33 @@ select {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
 }
+<<<<<<< Updated upstream
+=======
+.ring-gray-700 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
+}
+>>>>>>> Stashed changes
 .ring-slate-200 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(226 232 240 / var(--tw-ring-opacity));
 }
+<<<<<<< Updated upstream
+=======
+.ring-warning-500 {
+>>>>>>> Stashed changes
 .ring-secondary-500 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(100 116 139 / var(--tw-ring-opacity));
 }
 .ring-gray-700 {
+<<<<<<< Updated upstream
+=======
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(245 158 11 / var(--tw-ring-opacity));
+}
+.ring-positive-500 {
+>>>>>>> Stashed changes
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
 }
@@ -3611,6 +3640,12 @@ select {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(71 85 105 / var(--tw-ring-opacity));
 }
+<<<<<<< Updated upstream
+=======
+.ring-negative-500 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
+>>>>>>> Stashed changes
 .ring-positive-500 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(16 185 129 / var(--tw-ring-opacity));
@@ -4028,12 +4063,25 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.hover\:bg-gray-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+
+>>>>>>> Stashed changes
 .hover\:bg-slate-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 
+<<<<<<< Updated upstream
+=======
+.hover\:bg-gray-200:hover {
+>>>>>>> Stashed changes
 .hover\:bg-slate-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
@@ -4047,11 +4095,26 @@ select {
 
 
 .hover\:bg-gray-900:hover {
+<<<<<<< Updated upstream
+=======
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+
+.hover\:bg-warning-600:hover {
+>>>>>>> Stashed changes
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 
+<<<<<<< Updated upstream
+=======
+.hover\:bg-gray-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+>>>>>>> Stashed changes
 .hover\:bg-negative-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
@@ -4388,6 +4451,12 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.hover\:bg-negative-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+>>>>>>> Stashed changes
 .hover\:bg-positive-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(5 150 105 / var(--tw-bg-opacity));
@@ -4567,6 +4636,10 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.hover\:text-indigo-100:hover {
+>>>>>>> Stashed changes
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -4574,6 +4647,21 @@ select {
 
 
 .hover\:text-negative-500:hover {
+<<<<<<< Updated upstream
+=======
+  --tw-text-opacity: 1;
+  color: rgb(224 231 255 / var(--tw-text-opacity));
+}
+
+
+.hover\:text-yellow-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+
+.hover\:text-indigo-900:hover {
+>>>>>>> Stashed changes
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
@@ -4610,13 +4698,28 @@ select {
 }
 
 
+<<<<<<< Updated upstream
 .hover\:ring-secondary-600:hover {
+=======
+.hover\:ring-gray-900:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(17 24 39 / var(--tw-ring-opacity));
+}
+
+
+.hover\:ring-warning-600:hover {
+.hover\:ring-negative-600:hover {
+>>>>>>> Stashed changes
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(71 85 105 / var(--tw-ring-opacity));
 }
 
 
+<<<<<<< Updated upstream
 .hover\:ring-gray-900:hover {
+=======
+.hover\:ring-primary-600:hover {
+>>>>>>> Stashed changes
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(17 24 39 / var(--tw-ring-opacity));
 }
@@ -4634,7 +4737,12 @@ select {
 }
 
 
+<<<<<<< Updated upstream
 .hover\:ring-green-600:hover {
+=======
+.hover\:ring-teal-600:hover {
+.hover\:ring-warning-600:hover {
+>>>>>>> Stashed changes
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(22 163 74 / var(--tw-ring-opacity));
 }
@@ -5254,6 +5362,16 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.dark .dark\:border-slate-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(100 116 139 / var(--tw-border-opacity));
+}
+
+
+.dark .dark\:border-slate-700 {
+>>>>>>> Stashed changes
 .dark .dark\:border-slate-700 {
   --tw-border-opacity: 1;
   border-color: rgb(51 65 85 / var(--tw-border-opacity));
@@ -5344,6 +5462,22 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.dark .dark\:bg-warning-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 83 9 / var(--tw-bg-opacity));
+}
+
+
+.dark .dark\:bg-positive-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 120 87 / var(--tw-bg-opacity));
+}
+
+
+.dark .dark\:bg-secondary-700 {
+>>>>>>> Stashed changes
 .dark .dark\:bg-negative-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
@@ -5373,6 +5507,12 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.dark .dark\:bg-negative-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+>>>>>>> Stashed changes
 .dark .dark\:bg-green-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
@@ -5534,6 +5674,12 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.dark .dark\:text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+>>>>>>> Stashed changes
 .dark .dark\:text-negative-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
@@ -5636,6 +5782,10 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.dark .dark\:ring-gray-700 {
+>>>>>>> Stashed changes
 .dark .dark\:ring-slate-600 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(71 85 105 / var(--tw-ring-opacity));
@@ -5656,6 +5806,10 @@ select {
 
 .dark .dark\:ring-gray-700 {
   --tw-ring-opacity: 1;
+<<<<<<< Updated upstream
+=======
+  --tw-ring-color: rgb(180 83 9 / var(--tw-ring-opacity));
+>>>>>>> Stashed changes
   --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
 }
 
@@ -5684,7 +5838,36 @@ select {
 }
 
 
+<<<<<<< Updated upstream
 .dark .dark\:ring-warning-700 {
+=======
+.dark .dark\:ring-primary-700 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(67 56 202 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:ring-teal-700 {
+.dark .dark\:ring-warning-700 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(15 118 110 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:ring-slate-700 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(51 65 85 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:ring-secondary-700 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(51 65 85 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:ring-negative-700 {
+>>>>>>> Stashed changes
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(180 83 9 / var(--tw-ring-opacity));
 }
@@ -5867,6 +6050,10 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.dark .dark\:hover\:bg-gray-600:hover {
+>>>>>>> Stashed changes
 .dark .dark\:hover\:bg-slate-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
@@ -5887,6 +6074,10 @@ select {
 
 .dark .dark\:hover\:bg-gray-600:hover {
   --tw-bg-opacity: 1;
+<<<<<<< Updated upstream
+=======
+  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
+>>>>>>> Stashed changes
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
@@ -5910,6 +6101,40 @@ select {
 
 
 .dark .dark\:hover\:bg-green-600:hover {
+<<<<<<< Updated upstream
+=======
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
+
+
+.dark .dark\:hover\:bg-positive-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+}
+
+
+.dark .dark\:hover\:bg-primary-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
+
+.dark .dark\:hover\:bg-teal-600:hover {
+.dark .dark\:hover\:bg-warning-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
+}
+
+
+.dark .dark\:hover\:bg-slate-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+
+.dark .dark\:hover\:bg-secondary-600:hover {
+>>>>>>> Stashed changes
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
@@ -6078,6 +6303,12 @@ select {
 }
 
 
+<<<<<<< Updated upstream
+=======
+.dark .dark\:hover\:ring-warning-600:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(217 119 6 / var(--tw-ring-opacity));
+>>>>>>> Stashed changes
 .dark .dark\:hover\:ring-negative-600:hover {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(220 38 38 / var(--tw-ring-opacity));
@@ -6108,7 +6339,36 @@ select {
 }
 
 
+<<<<<<< Updated upstream
 .dark .dark\:hover\:ring-warning-600:hover {
+=======
+.dark .dark\:hover\:ring-primary-600:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(79 70 229 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:hover\:ring-teal-600:hover {
+.dark .dark\:hover\:ring-warning-600:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(13 148 136 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:hover\:ring-slate-600:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(71 85 105 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:hover\:ring-secondary-600:hover {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(71 85 105 / var(--tw-ring-opacity));
+}
+
+
+.dark .dark\:hover\:ring-gray-400:hover {
+>>>>>>> Stashed changes
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(217 119 6 / var(--tw-ring-opacity));
 }
@@ -6992,6 +7252,17 @@ select {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
+<<<<<<< Updated upstream
+=======
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+>>>>>>> Stashed changes
   .lg\:items-center {
     align-items: center;
   }
