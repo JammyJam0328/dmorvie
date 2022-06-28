@@ -30,6 +30,12 @@ Route::middleware([
             case 2:
                 return redirect()->route('branch-admin.dashboard');
                 break;
+            case 4:
+                return redirect()->route('kiosk.transaction');
+                break;
+            case 5:
+                return redirect()->route('kitchen');
+                break;
         }
     })->name('dashboard');
 });
@@ -66,7 +72,7 @@ Route::prefix('/kiosk')->middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/select-transaction',function(){
+    Route::get('/',function(){
         return view('kiosk.transaction');
     })->name('kiosk.transaction');
 
@@ -75,8 +81,7 @@ Route::prefix('/kiosk')->middleware([
     })->name('kiosk.reports');
 });
 
-<<<<<<< Updated upstream
-=======
+
 Route::prefix('/kitchen')->middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -89,10 +94,7 @@ Route::prefix('/kitchen')->middleware([
 
 
 
->>>>>>> Stashed changes
 
-
-// branch routes
 Route::prefix('/branch-admin')->middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

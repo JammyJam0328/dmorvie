@@ -1,5 +1,5 @@
 <div>
-    {{-- @dump($customer_transaction) --}}
+    @dump($customer_transaction)
     <div wire:loading.delay.longest 
     wire:loading.class="fixed top-0 left-0 bg-gray-700 flex items-center justify-center w-full h-full bg-opacity-90">
         <div class="animate-pulse ">
@@ -21,18 +21,17 @@
         @switch($step)
             @case(1)
                 <div class="mt-10">
-                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE SELECT NUMBER OF HOURS TO
-                        STAY</h1>
-                    <div class="max-w-7xl mx-auto mt-20  px-4 text-center sm:px-6 lg:px-8 ">
+                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE SELECT ROOM TYPE</h1>
+                    <div class="max-w-7xl mx-auto mt-10 text-center  ">
                         <div class="space-y-12">
 
-                            <ul role="list" class="mx-auto  grid grid-cols-2 gap-5 space-y-0 lg:grid-cols-3 lg:max-w-5xl">
+                            <ul role="list" class="mx-auto  grid grid-cols-2 gap-5 space-y-0 lg:grid-cols-4  lg:max-w-5xl">
+                                @forelse ($types as $type)
                                 <li>
                                     <div class="space-y-3">
-                                        <button wire:click="selectHours({{ 6 }})"
-                                            class="mx-auto h-32 w-32 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center lg:text-4xl text-3xl text-gray-600 font-black font-poppins">6
-                                                HOURS</h1>
+                                        <button wire:click="selectRoomType({{ $type->id }})"
+                                            class="mx-auto h-32 w-32 rounded-full xl:w-40 xl:h-40 flex items-center justify-center bg-white">
+                                            <h1 class="text-center lg:text-3xl text-3xl text-gray-600 font-black font-poppins uppercase">{{$type->description}}</h1>
                                         </button>
                                         <div class="space-y-1">
                                             <div class="text-lg leading-6 font-black font-poppins text-white space-y-1">
@@ -41,34 +40,9 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="space-y-3">
-                                        <button wire:click="selectHours({{ 12 }})"
-                                            class="mx-auto h-32 w-32 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center lg:text-4xl text-3xl text-gray-600 font-black font-poppins">
-                                                12 HOURS</h1>
-                                        </button>
-                                        <div class="space-y-1">
-                                            <div class="text-lg leading-6 font-black text-white font-poppins space-y-1">
-                                                <h3></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="space-y-3">
-                                        <button wire:click="selectHours({{ 24 }})"
-                                            class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center text-4xl text-gray-600 font-black font-poppins">24 HOURS</h1>
-                                        </button>
-                                        <div class="space-y-1">
-                                            <div class="text-lg leading-6 font-black text-white font-poppins space-y-1">
-                                                <h3></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
+                                @empty
+                                    
+                                @endforelse
                                 <!-- More people... -->
                             </ul>
                         </div>
@@ -89,7 +63,7 @@
                             <span>Back</span>
                         </button>
                     </div>
-                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE SELECT ROOM TYPE</h1>
+                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE SELECT NUMBER OF HOURS OF STAY</h1>
                     <div class="max-w-7xl mx-auto mt-20  px-4 text-center sm:px-6 lg:px-8 ">
                         <div class="space-y-12">
 
@@ -109,32 +83,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="space-y-3">
-                                        <button wire:click="selectHours({{ 12 }})"
-                                            class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center text-4xl text-gray-600 font-black font-poppins">12 HOURS</h1>
-                                        </button>
-                                        <div class="space-y-1">
-                                            <div class="text-lg leading-6 font-black text-white font-poppins space-y-1">
-                                                <h3></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="space-y-3">
-                                        <button wire:click="selectHours({{ 24 }})"
-                                            class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center text-4xl text-gray-600 font-black font-poppins">24 HOURS</h1>
-                                        </button>
-                                        <div class="space-y-1">
-                                            <div class="text-lg leading-6 font-black text-white font-poppins space-y-1">
-                                                <h3></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                
 
                                 <!-- More people... -->
                             </ul>
