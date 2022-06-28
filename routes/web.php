@@ -81,7 +81,6 @@ Route::prefix('/kiosk')->middleware([
     })->name('kiosk.reports');
 });
 
-<<<<<<< HEAD
 
 Route::prefix('/kitchen')->middleware([
     'auth:sanctum',
@@ -95,8 +94,6 @@ Route::prefix('/kitchen')->middleware([
 
 
 
-=======
->>>>>>> parent of 4765de2 (12)
 
 Route::prefix('/branch-admin')->middleware([
     'auth:sanctum',

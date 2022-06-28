@@ -73,9 +73,10 @@
                 <x-button wire:click="edit_action">
                     Edit
                 </x-button>
-                <x-button wire:click="view_action">
+                <x-button wire:click="add_type_action">
                     Add Types
                 </x-button>
+
                 <hr>
                 <x-button wire:click="delete_action"
                     negative>

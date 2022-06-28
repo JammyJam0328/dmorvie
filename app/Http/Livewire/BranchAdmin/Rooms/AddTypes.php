@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\BranchAdmin\Rooms;
 
 use Livewire\Component;
-use App\Models\{Room,Branch,RoomType};
+use App\Models\{Room,Branch,RoomType,RoomRate,Rate};
 use WireUi\Traits\Actions;
 
 class AddTypes extends Component
@@ -48,6 +48,13 @@ class AddTypes extends Component
             'room_id'=>$this->selected_room_id,
             'type_id'=>$this->selected_type_id,
         ]);
+        $rates = Rate::where('branch_id',auth()->user()->branch_id)->get();
+        foreach($rates as $rate){
+            RoomRate::create([
+                'room_id'=>$this->selected_room_id,
+                'rate_id'=>$rate->id,
+            ]);
+        }
         $this->notification([
             'title'=>'Success',
             'description'=>'Type added',

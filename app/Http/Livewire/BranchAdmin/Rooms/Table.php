@@ -75,10 +75,18 @@ class Table extends Component
         $this->action_modal=false;
     }
 
-    public function view_action()
+    public function add_type_action()
     {
         if($this->selected_room_id){
             $this->emit('add_types',$this->selected_room_id);
+        }
+        $this->action_modal=false;
+    }
+
+    public function add_rate_action()
+    {
+        if($this->selected_room_id){
+            $this->emit('add_rates',$this->selected_room_id);
         }
         $this->action_modal=false;
     }
