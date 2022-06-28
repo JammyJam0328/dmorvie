@@ -17,6 +17,7 @@
                 :statuses="$statuses" />
             <livewire:branch-admin.rooms.edit :floors="$floors"
                 :statuses="$statuses" />
+            <livewire:branch-admin.rooms.add-types :types="$types" />
         </div>
     </div>
 </x-layouts.branch-admin>

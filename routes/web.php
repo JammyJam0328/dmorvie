@@ -105,9 +105,11 @@ Route::prefix('/branch-admin')->middleware([
     Route::get('/rooms',function(){
         $floors = \App\Models\Floor::where('branch_id',auth()->user()->branch_id)->get('id','number');
         $statuses = \App\Models\Status::all();
+        $types = \App\Models\Type::where('branch_id',auth()->user()->branch_id)->get('id','name');
         return view('branch-admin.rooms',[
             'floors'=>$floors,
             'statuses'=>$statuses,
+            'types'=>$types,
         ]); 
     })->name('branch-admin.rooms');
     Route::get('/checkin',function(){

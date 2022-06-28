@@ -13,7 +13,7 @@
                 x-on:click="$dispatch('create-room')"
                 md
                 icon="plus">
-                Add rates
+                Add room
             </x-button>
         </div>
     </div>
@@ -71,10 +71,15 @@
             wire:model.defer="action_modal">
             <div class="grid p-5 space-y-3 bg-white rounded-lg">
                 <x-button wire:click="edit_action">
-                    Edit Branch
+                    Edit
                 </x-button>
-                <x-button wire:click="delete_action">
-                    Delete Branch
+                <x-button wire:click="view_action">
+                    Add Types
+                </x-button>
+                <hr>
+                <x-button wire:click="delete_action"
+                    negative>
+                    Delete
                 </x-button>
             </div>
         </x-modal>

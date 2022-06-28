@@ -22,5 +22,9 @@ class Room extends Model
     {
         return $this->belongsTo(Floor::class);
     }
+    public function room_types()
+    {
+        return $this->belongsToMany(RoomType::class);
+    }
     
 }
