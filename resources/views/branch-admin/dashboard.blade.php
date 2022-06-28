@@ -21,7 +21,7 @@
             </div>
             <div>
                 <ul role="list"
-                    class="grid grid-cols-1 gap-6 px-10 py-5 bg-gray-100 rounded-md sm:grid-cols-2 lg:grid-cols-4">
+                    class="grid grid-cols-1 gap-6 px-10 py-5 bg-white border border-gray-300 rounded-xl sm:grid-cols-2 lg:grid-cols-4">
                     <li class="col-span-1 space-y-4 rounded-lg ">
                         <div class="flex">
                             <div class="p-3 rounded-full bg-black">
@@ -115,9 +115,9 @@
                         <div class="flex flex-col ">
                             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                                    <div class="overflow-hidden shadow md:rounded-xl">
-                                        <table class="min-w-full divide-y divide-gray-300">
-                                            <tbody class="bg-gray-100 divide-y divide-gray-100">
+                                    <div class="overflow-hidden  md:rounded-xl">
+                                        <table class="min-w-full divide-y divide-gray-300 border border-gray-300">
+                                            <tbody class="bg-white divide-y divide-gray-100">
                                                 <tr class="hover:bg-gray-200">
                                                     <td
                                                         class="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 whitespace-nowrap sm:pl-6">
