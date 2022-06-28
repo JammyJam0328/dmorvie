@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Kiosk;
 
 use Livewire\Component;
 use App\Models\Type;
+use App\Models\Rate;
 
 class Kiosk extends Component
 {
@@ -15,6 +16,7 @@ class Kiosk extends Component
     {
         return view('livewire.kiosk.kiosk', [
             'types' => Type::where('branch_id', auth()->user()->branch_id)->get(),
+            'rates' => 
         ]);
     }
 

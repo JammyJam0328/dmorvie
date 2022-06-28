@@ -63,7 +63,7 @@
                             <span>Back</span>
                         </button>
                     </div>
-                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE SELECT ROOM TYPE</h1>
+                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE SELECT NUMBER OF HOURS OF STAY</h1>
                     <div class="max-w-7xl mx-auto mt-20  px-4 text-center sm:px-6 lg:px-8 ">
                         <div class="space-y-12">
 
@@ -83,32 +83,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="space-y-3">
-                                        <button wire:click="selectHours({{ 12 }})"
-                                            class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center text-4xl text-gray-600 font-black font-poppins">12 HOURS</h1>
-                                        </button>
-                                        <div class="space-y-1">
-                                            <div class="text-lg leading-6 font-black text-white font-poppins space-y-1">
-                                                <h3></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="space-y-3">
-                                        <button wire:click="selectHours({{ 24 }})"
-                                            class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center text-4xl text-gray-600 font-black font-poppins">24 HOURS</h1>
-                                        </button>
-                                        <div class="space-y-1">
-                                            <div class="text-lg leading-6 font-black text-white font-poppins space-y-1">
-                                                <h3></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                
 
                                 <!-- More people... -->
                             </ul>

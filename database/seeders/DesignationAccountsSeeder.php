@@ -23,10 +23,17 @@ class DesignationAccountsSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'KA-’Morvie Suites Recto',
+            'name' => 'KA-D’Morvie Suites Recto',
             'email' => 'kioskdmsr@gmail.com',
             'password' => bcrypt('123456'),
             'role_id' => 4,
+            'branch_id' => 12,
+        ]);
+        User::create([
+            'name' => 'KHA-D’Morvie Suites Recto',
+            'email' => 'kitchendmsr@gmail.com',
+            'password' => bcrypt('123456'),
+            'role_id' => 5,
             'branch_id' => 12,
         ]);
     }

@@ -33,6 +33,9 @@ Route::middleware([
             case 4:
                 return redirect()->route('kiosk.transaction');
                 break;
+            case 5:
+                return redirect()->route('kitchen');
+                break;
         }
     })->name('dashboard');
 });
@@ -77,6 +80,19 @@ Route::prefix('/kiosk')->middleware([
         return view('kiosk.reports');
     })->name('kiosk.reports');
 });
+
+Route::prefix('/kitchen')->middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/',function(){
+        return view('kitchen.dashboard');
+    })->name('kitchen');
+});
+
+
+
 Route::prefix('/branch-admin')->middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
