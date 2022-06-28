@@ -81,7 +81,6 @@ Route::prefix('/kiosk')->middleware([
     })->name('kiosk.reports');
 });
 
-<<<<<<< HEAD
 Route::prefix('/kitchen')->middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -94,11 +93,6 @@ Route::prefix('/kitchen')->middleware([
 
 
 
-=======
-
-
-// branch routes
->>>>>>> admin-updates
 Route::prefix('/branch-admin')->middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

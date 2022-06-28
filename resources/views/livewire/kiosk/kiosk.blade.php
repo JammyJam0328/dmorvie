@@ -63,18 +63,21 @@
                             <span>Back</span>
                         </button>
                     </div>
-                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE SELECT NUMBER OF HOURS OF STAY</h1>
-                    <div class="max-w-7xl mx-auto mt-20  px-4 text-center sm:px-6 lg:px-8 ">
+                    <h1 class="text-xl font-bold font-poppins text-center text-white border-b">PLEASE CHOOSE ANY AVAILABLE ROOM</h1>
+                    <div class="max-w-7xl mx-auto mt-10  text-center sm:px-6">
                         <div class="space-y-12">
 
                             <ul role="list"
-                                class="mx-auto space-y-6 sm:grid sm:grid-cols-2 sm:gap-20 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl">
+                                class="x-auto space-y-6 sm:grid sm:grid-cols-2 sm:gap-5 sm:space-y-0 lg:grid-cols-5 lg:max-w-5xl">
+                                @foreach ($rooms as $room)
                                 <li>
                                     <div class="space-y-3">
-                                        <button wire:click="selectRoomType('single')"
-                                            class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 flex items-center justify-center bg-white">
-                                            <h1 class="text-center text-3xl text-gray-600 font-black font-poppins">SINGLE BED
-                                                SIZE</h1>
+                                        <button wire:click="selectRoom({{$room->id}})"
+                                            class="mx-auto h-40 w-40 relative rounded-xl full xl:w-40 xl:h-40 flex items-center justify-center bg-white">
+                                            <div
+                                                class="absolute top-0 left-0 px-2 rounded-tl-xl py-1 font-bold uppercase text-white rounded-br-xl shadow-md bg-green-700">
+                                                Floor {{$room->floor->number}}</div>
+                                            <h1 class="text-center text-3xl text-gray-600 font-black font-poppins">RM #{{$room->number}}</h1>
                                         </button>
                                         <div class="space-y-1">
                                             <div class="text-lg leading-6 font-black font-poppins text-white space-y-1">
@@ -83,6 +86,7 @@
                                         </div>
                                     </div>
                                 </li>
+                                @endforeach
                                 
 
                                 <!-- More people... -->
