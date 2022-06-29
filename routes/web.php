@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BranchController;
+use App\Models\Role;
+use App\Models\Branch;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
