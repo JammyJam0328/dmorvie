@@ -18,6 +18,8 @@ class Kiosk extends Component
     public $transaction;
     public $complete_name;
     public $code;
+    public $scan;
+    public $checkOut_step = 1;
     public $customer_transaction = [
         'roomtype' => '',
         'room_id' => '',
@@ -32,8 +34,11 @@ class Kiosk extends Component
             })->get() : [],
             'rates' => $this->customer_transaction['room_id'] ? RoomRate::where('room_id', $this->customer_transaction['room_id'])->whereHas('rate', function($q){
                 return $q->where('type_id', $this->customer_transaction['roomtype']);
-            
             })->get() : [],
+            'transactions' => Transaction::where('branch_id', auth()->user()->branch_id)->whereHas('customer', function($q){
+                return $q->where('qr_code', '=', $this->scan);
+            })->get(),
+           
         ]);
     }
 
@@ -104,5 +109,26 @@ class Kiosk extends Component
         ]);
         $this->code = $transaction_code;
         $this->step = 5;
+    }
+
+    public function updatedScan(){
+        $this->checkOut_step = 2;
+    }
+
+    public function checkOut(){
+
+        $data = Transaction::where('branch_id', auth()->user()->branch_id)->whereHas('customer', function($q){
+            return $q->where('qr_code', '=', $this->scan);
+        })->get();
+        $data->first()->customer->update([
+            'check_out_time' => Carbon::now(),
+        ]);
+
+        $data->first()->customer->check_in_detail->room->update([
+            'status_id' => 3,
+        ]);
+
+       $this->transaction = null;
+        $this->checkOut_step = 1;
     }
 }
