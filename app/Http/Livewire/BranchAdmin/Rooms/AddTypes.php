@@ -42,6 +42,9 @@ class AddTypes extends Component
             ]);
             return;
         }
+        if ($this->selected_type_id=='') {
+            return;
+        }
         RoomType::create([
             'room_id'=>$this->selected_room_id,
             'type_id'=>$this->selected_type_id,

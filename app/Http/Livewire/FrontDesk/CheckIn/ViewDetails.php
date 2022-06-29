@@ -12,7 +12,17 @@ class ViewDetails extends Component
     public $customer=null;
     public function render()
     {
-        return view('livewire.front-desk.check-in.view-details');
+        return view('livewire.front-desk.check-in.view-details',[
+            'transactions'=>Transaction::query()
+                                    ->where('branch_id',auth()->user()->branch_id)
+                                    ->where('transaction_type_id',1)
+                                    ->whereHas('customer',function($query){
+                                        $query->where('check_in_time','!=',null);
+                                    })
+                                    ->with(['customer.check_in_detail.room'])
+                                    ->orderBy('id','desc')
+                                    ->take(10)->get(),
+        ]);
     }
 
     public function updatedQrCode()
@@ -22,6 +32,13 @@ class ViewDetails extends Component
                                                 ->where('qr_code',$this->qr_code)
                                                 ->with(['transactions.transaction_type'])
                                                 ->first();
+            if ($this->customer->check_in_time!=null) {
+                $this->notification([
+                    'title'=>'Error',
+                    'description'=>'Customer already checked in',
+                    'icon'=>'error',
+                ]);
+            }
         }else{
             $this->customer = null;
         }

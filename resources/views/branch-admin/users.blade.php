@@ -19,6 +19,8 @@
         <div class="px-4 mx-auto mt-10 max-w-7xl sm:px-6 md:px-8">
             <livewire:branch-admin.users.table />
             <livewire:branch-admin.users.create :roles="$roles" />
+            <livewire:branch-admin.users.edit :roles="$roles" />
+
         </div>
     </div>
 </x-layouts.branch-admin>

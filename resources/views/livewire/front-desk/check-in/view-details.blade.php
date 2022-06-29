@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="sm:w-full  p-2 space-y-3">
+    <div class="sm:w-full  p-2 space-y-7">
         <div id="customer_info">
             <div class="w-full bg-gradient-to-tr from-cyan-700 to-cyan-400  p-2 rounded-md text-gray-700 ">
                 @if ($customer != null && $customer->check_in_time == null)
@@ -101,8 +101,9 @@
                                 <div class="ml-3">
                                     <h3 class="text-sm font-medium text-yellow-800">Attention needed</h3>
                                     <div class="mt-2 text-sm text-yellow-700">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur,
-                                            ipsum similique veniam quo totam eius aperiam dolorum.</p>
+                                        <p>
+                                            Please scan the QR code of the customer to check in.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -110,6 +111,77 @@
 
                     </div>
                 @endif
+            </div>
+        </div>
+        <div id="recents">
+            <div>
+                <div class="mb-5">
+                    <h1>
+                        Recent Check Ins
+                    </h1>
+                </div>
+                <div class="bg-white shadow overflow-hidden sm:rounded-md">
+                    <ul role="list"
+                        class="divide-y divide-gray-200">
+                        @forelse ($transactions as $transaction)
+                            <li>
+                                <a href="#"
+                                    class="block hover:bg-gray-50">
+                                    <div class="px-4 py-4 sm:px-6">
+                                        <div class="flex items-center justify-between">
+                                            <p class="text-sm font-medium text-indigo-600 truncate">
+                                                {{ $transaction->customer->name }}
+                                            </p>
+                                            <div class="ml-2 flex-shrink-0 flex">
+                                                <p
+                                                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                    Room # {{ $transaction->customer->check_in_detail->room->number }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 sm:flex sm:justify-between">
+                                            <div class="sm:flex">
+                                                <p class="flex items-center text-sm text-gray-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                                                        viewBox="0 0 20 20"
+                                                        fill="currentColor">
+                                                        <path fill-rule="evenodd"
+                                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+
+                                                    {{ $transaction->customer->check_in_detail->hours }} hrs
+                                                </p>
+
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                                <!-- Heroicon name: solid/calendar -->
+                                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20"
+                                                    fill="currentColor"
+                                                    aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                                <p>
+                                                    Checked in at
+                                                    <time datetime="2020-01-07">
+                                                        {{ $transaction->customer->check_in_time }}
+                                                    </time>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        @empty
+                        @endforelse
+                    </ul>
+                </div>
+
             </div>
 
         </div>
