@@ -32,6 +32,9 @@ Route::middleware([
             case 2:
                 return redirect()->route('branch-admin.dashboard');
                 break;
+            case 3:
+                return redirect()->route('front-desk.dashboard');
+                break;
             case 4:
                 return redirect()->route('kiosk.transaction');
                 break;
@@ -122,4 +125,25 @@ Route::prefix('/branch-admin')->middleware([
         Route::get('/rooms','rooms')->name('branch-admin.rooms');
         Route::get('/rates','rates')->name('branch-admin.rates');
     });
+});
+
+
+Route::prefix('/front-desk')->middleware([
+    'auth:sanctum',
+    'front_desk',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard',function(){
+        return view('front-desk.dashboard');
+    })->name('front-desk.dashboard');
+    Route::get('/check-in',function(){
+        return view('front-desk.check-in');
+    })->name('front-desk.check-in');
+    Route::get('/rooms',function(){
+        return view('front-desk.rooms');
+    })->name('front-desk.rooms');
+    Route::get('/inhouse',function(){
+        return view('front-desk.inhouse');
+    })->name('front-desk.inhouse');
 });
