@@ -123,7 +123,7 @@
                 <div class="max-w-7xl mx-auto mt-10 text-center  ">
                     <div class="space-y-12">
 
-                        <ul role="list" class="mx-auto  grid grid-cols-2 gap-5 lg:max-w-5xl" :class="$rates->count() != 3 ? 'lg:grid-cols-{{$rates->count()}}' : 'grid-cols-3'">
+                        <ul role="list" class="mx-auto  grid grid-cols-2 gap-5 lg:max-w-5xl lg:grid-cols-3">
                             @forelse ($rates as $rate)
                             <li>
                                 <div class="space-y-3">
