@@ -10,6 +10,16 @@
         </div>
 
     </div>
+
+    <div wire:target="confirmCheckIn" 
+    wire:loading.flex class="fixed z-30 top-0 left-0 bg-gray-700 flex items-center justify-center w-full h-full bg-opacity-90">
+        <div class="animate-pulse ">
+            <div class="flex flex-col justify-center  items-center space-x-2">
+                <img src="{{ asset('images/dmorvielogo.png') }}" class="h-20 p-2 rounded-full bg-white" alt="">
+            </div>
+            <h1 class="text-center mt-2 text-white font-poppins text-2xl">Please wait while processing your transaction ...</h1>
+        </div>
+    </div>
     @if ($transaction == 'check-in')
         <button wire:click="closeTransaction" class="absolute -top-7 -right-6 rounded-full h-14 w-14 bg-white ">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-full text-red-500" fill="none" viewBox="0 0 24 24"
@@ -156,7 +166,7 @@
                     <div class="bg-white p-2 rounded-md shadow-lg">
                         <div class="border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-indigo-600 focus-within:border-indigo-600">
                             <label for="name" class="block text-sm font-poppins font-semibold text-gray-500 uppercase">Your Complete Name</label>
-                            <input type="text" name="name" id="name" class="block w-full border-0 font-poppins p-0 text-gray-700 text-lg placeholder-gray-500 focus:ring-0" placeholder="">
+                            <input wire:model="complete_name" type="text" name="name" id="name" class="block w-full border-0 font-poppins p-0 text-gray-700 text-lg placeholder-gray-500 focus:ring-0" placeholder="">
                           </div>
                     </div>
                     <div class="">
@@ -238,12 +248,101 @@
                         </ul>
 
                         <div class="mt-2 flex justify-end">
-                            <button wire:click="confirmCheckIn()"
+                            <button wire:click="confirmCheckIn"
                                 class="bg-white rounded-lg flex items-center space-x-2 uppercase font-poppins font-bold text-gray-700 p-2">
-                                
                                 <span>Confirm</span>
                             </button>
                         </div>
+                    </div>
+                </div>
+            </div>
+            @break
+            @case(5)
+            <div class="max-w-7xl mx-auto mt-5">
+                
+                <div class="">
+                    <ul role="list"
+                        class="mx-auto  mt-2 sm:grid sm:grid-cols-2  sm:space-y-0 lg:grid-cols-2 lg:max-w-5xl">
+                        <li>
+                            <div class="space-y-3 border-r-2 border-dashed">
+                                <div class="mx-auto h-40 w-40  xl:w-96 xl:h-80 rounded-r-md relative flex p-2 flex-col bg-white">
+                                    <div class="">
+                                        <ul role="list" class="divide-y relative divide-gray-200">
+                                          <li class="py-4">
+                                            <div class="flex space-x-3">
+                                              <div class="flex-1 space-y-1">
+                                                <div class="flex items-center justify-between">
+                                                    @php
+                                                        $room_type = \App\Models\Type::where('id',$customer_transaction['roomtype'])->first()->name;
+                                                        $room = \App\Models\Room::where('id',$customer_transaction['room_id'])->first();
+                                                        $rate = \App\Models\RoomRate::where('id',$customer_transaction['hours'])->first();
+                                                        $total = $rate->rate->price + 200;
+                                                        
+                                                    @endphp
+                                                 <div class="desc">
+                                                    <h1 class="text-xl leading-6 font-bold uppercase font-poppins text-gray-600 underline">{{$room_type}} Bed Size</h1>
+                                                    <h1 class="font-bold uppercase font-poppins text-gray-500 text-sm">Rm#{{$room->id}}(Floor {{$room->floor->number}})</h1>
+                                                 </div>
+                                                  <p class=" font-bold text-gray-600">
+                                                    &#8369;{{number_format($rate->rate->price,2)}}
+                                                  </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <li class="py-4">
+                                            <div class="flex space-x-3">
+                                              <div class="flex-1 space-y-1">
+                                                <div class="flex items-center justify-between">
+                                                 <div class="desc">
+                                                    <h1 class="text-xl leading-6 font-bold uppercase font-poppins text-gray-600 underline">CHECK-IN DEPOSIT</h1>
+                                                    <h1 class="font-bold uppercase font-poppins text-gray-500 text-sm">TV REMOTE + ROOM KEY</h1>
+                                                 </div>
+                                                  <p class=" font-bold text-gray-600">
+                                                    &#8369;200.00
+                                                  </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </li>
+                                      
+                                          <!-- More items... -->
+                                          
+                                        </ul>
+                                      </div>
+                                      <div class="absolute bottom-2 w-full pr-4 ">
+                                        <div class="flex w-full justify-between text-lg text-green-700 font-bold font-poppins">
+                                            <h1>TOTAL</h1>
+                                            <h1>&#8369;{{number_format($total,2)}}</h1>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="space-y-3">
+                                <button wire:click="selectHours({{ 12 }})"
+                                    class="mx-auto h-40 w-40  xl:w-96 xl:h-80 relative rounded-l-md flex items-center justify-center bg-white">
+                                 <div class="bg-blue-300">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{$code}}" class="bg-blue-300 h-56" alt="">
+                                 </div>
+                                 <div class="absolute bottom-6 w-full left-0 ">
+                                    <p class="text-gray-700 font-inter ">{{$code}}</p>
+                                 </div>
+                                </button>
+                                
+                            </div>
+                        </li>
+                       
+
+                        <!-- More people... -->
+                    </ul>
+
+                    <div class="mt-2 flex justify-end">
+                        <button wire:click="confirmCheckIn"
+                            class="bg-white rounded-lg flex items-center space-x-2 uppercase font-poppins font-bold text-gray-700 p-2">
+                            <span>Print</span>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -1407,6 +1407,9 @@ select {
 .left-0\.5 {
   left: 0.125rem;
 }
+.bottom-6 {
+  bottom: 1.5rem;
+}
 .z-0 {
   z-index: 0;
 }
@@ -1675,6 +1678,9 @@ select {
 .h-7 {
   height: 1.75rem;
 }
+.h-56 {
+  height: 14rem;
+}
 .max-h-56 {
   max-height: 14rem;
 }
@@ -1783,6 +1789,9 @@ select {
 .w-\[calc\(100\%-3\.5rem\)\] {
   width: calc(100% - 3.5rem);
 }
+.w-9\/12 {
+  width: 75%;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -1815,6 +1824,9 @@ select {
 }
 .max-w-\[18rem\] {
   max-width: 18rem;
+}
+.max-w-2xl {
+  max-width: 42rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2766,6 +2778,11 @@ select {
   --tw-gradient-to: rgb(243 244 246 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-gray-300 {
+  --tw-gradient-from: #d1d5db;
+  --tw-gradient-to: rgb(209 213 219 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .to-gray-400 {
   --tw-gradient-to: #9ca3af;
 }
@@ -2802,6 +2819,10 @@ select {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 .p-2 {
   padding: 0.5rem;
@@ -6478,6 +6499,11 @@ select {
     margin-right: -1.5rem;
   }
 
+  .sm\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
   .sm\:ml-3 {
     margin-left: 0.75rem;
   }
@@ -6746,6 +6772,10 @@ select {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .sm\:overflow-hidden {
+    overflow: hidden;
   }
 
   .sm\:rounded-lg {
@@ -7106,6 +7136,10 @@ select {
     max-width: 28rem;
   }
 
+  .lg\:max-w-7xl {
+    max-width: 80rem;
+  }
+
   .lg\:flex-1 {
     flex: 1 1 0%;
   }
@@ -7134,6 +7168,10 @@ select {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   .lg\:items-center {
     align-items: center;
   }
@@ -7144,6 +7182,15 @@ select {
 
   .lg\:gap-2 {
     gap: 0.5rem;
+  }
+
+  .lg\:gap-x-8 {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+
+  .lg\:gap-y-8 {
+    row-gap: 2rem;
   }
 
   .lg\:border-l {
@@ -7233,6 +7280,10 @@ select {
     height: 14rem;
   }
 
+  .xl\:h-80 {
+    height: 20rem;
+  }
+
   .xl\:w-40 {
     width: 10rem;
   }
@@ -7251,6 +7302,10 @@ select {
 
   .xl\:w-full {
     width: 100%;
+  }
+
+  .xl\:w-96 {
+    width: 24rem;
   }
 
   .xl\:flex-shrink-0 {

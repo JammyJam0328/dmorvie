@@ -18,10 +18,10 @@ return new class extends Migration
             $table->unsignedBigInteger('transaction_type_id');
             $table->foreignId('branch_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('customer_id');
-            $table->unsignedBigInteger('discount');
-            $table->string('description');
+            $table->unsignedBigInteger('discount')->nullable();
+            $table->string('description')->nullable();
             $table->string('amount');
-            $table->string('paid_at');
+            $table->string('paid_at')->nullable();
             $table->timestamps();
         });
     }
