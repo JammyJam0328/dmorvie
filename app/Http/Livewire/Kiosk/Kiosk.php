@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Type;
 use App\Models\Rate;
 use App\Models\Room;
+use App\Models\RoomRate;
 
 class Kiosk extends Component
 {
@@ -13,6 +14,7 @@ class Kiosk extends Component
     public $transaction;
     public $customer_transaction = [
         'roomtype' => '',
+        'room_id' => '',
     ];
     public $openRoom = false;
     public function render()
@@ -22,6 +24,7 @@ class Kiosk extends Component
             'rooms' =>$this->customer_transaction['roomtype'] ?  Room::whereHas('room_types', function($q){
                return  $q->where('type_id', $this->customer_transaction['roomtype']);
             })->get() : [],
+            'rates' => $this->customer_transaction['room_id'] ? RoomRate::where('room_id', $this->customer_transaction['room_id'])->get() : [],
         ]);
     }
 
