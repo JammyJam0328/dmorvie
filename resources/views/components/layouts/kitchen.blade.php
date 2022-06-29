@@ -216,31 +216,7 @@
                         <div class="relative h-full" style="min-height: 36rem">
                             <div class="absolute inset-0 py-4 pl-4 ">
                                 <div class="h-4/5 overflow-y-auto">
-                                    <ul role="list"
-                                        class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-                                        <li
-                                            class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-                                            <div class="flex-1 flex flex-col p-5">
-                                                <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full"
-                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
-                                                    alt="">
-                                                <h3 class="mt-3 text-gray-700 text-lg font-inter font-bold">CORNSILOG</h3>
-                                                <dl class="mt-1 flex-grow flex flex-col justify-between">
-                                                    <dt class="sr-only">Title</dt>
-                                                    <dd class="text-green-800 font-poppins font-bold text-sm">&#8369;75.00</dd>
-                                                    <dt class="sr-only">Role</dt>
-                                                    <dd class="mt-2">
-                                                        <x-button right-icon="clipboard-check" class="font-inter font-bold" dark label="ADD" />
-                                                    </dd>
-                                                </dl>
-                                            </div>
-                                        
-                                        </li>
-                                     
-                                     
-
-                                        <!-- More people... -->
-                                    </ul>
+                                    @yield('main')
                                 </div>
                             </div>
                         </div>
@@ -251,7 +227,7 @@
 
            @if (Request::routeIs('kitchen.order'))
            <div class=" bg-gray-300 pr-4 sm:pr-6 lg:pr-8 lg:flex-shrink-0  xl:pr-0">
-            <div class="h-full pl-6  lg:w-80">
+            <div class="h-full pl-2  lg:w-80">
                 <!-- Start right column area -->
                 <div class="h-full relative" style="min-height: 16rem">
                     <div class="absolute inset-0  bg-white  rounded-lg">@yield('order-transaction')</div>
