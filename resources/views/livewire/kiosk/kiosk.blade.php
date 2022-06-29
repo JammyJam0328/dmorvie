@@ -78,7 +78,7 @@
                         <div class="space-y-12">
 
                             <ul role="list"
-                                class="x-auto space-y-6 sm:grid sm:grid-cols-2 sm:gap-5 sm:space-y-0  lg:max-w-5xl" :class="$rooms->count() != 5 ? 'lg:grid-cols-{{$rooms->count()}}' : 'grid-cols-5' ">
+                                class="x-auto space-y-6 sm:grid sm:grid-cols-2 sm:gap-5 sm:space-y-0  lg:max-w-5xl lg:grid-cols-5">
                                 @foreach ($rooms as $room)
                                 <li>
                                     <div class="space-y-3">
