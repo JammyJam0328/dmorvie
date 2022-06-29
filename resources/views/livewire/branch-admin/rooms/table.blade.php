@@ -33,10 +33,10 @@
                         @forelse ($rooms as $room)
                             <x-table.row>
                                 <x-table.data>
-                                    {{ $room->number }}
+                                    ROOM # {{ $room->number }}
                                 </x-table.data>
                                 <x-table.data>
-                                    {{ $room->floor->number }}
+                                    FLOOR # {{ $room->floor->number }}
                                 </x-table.data>
                                 <x-table.data>
                                     {{ $room->status->name }}
