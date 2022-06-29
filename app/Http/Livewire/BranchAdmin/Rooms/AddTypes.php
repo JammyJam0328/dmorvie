@@ -34,7 +34,6 @@ class AddTypes extends Component
 
     public function updatedSelectedTypeId()
     {
-        // if already added, alert and return
         if($this->roomTypes->where('type_id',$this->selected_type_id)->count()){
             $this->notification([
                 'title'=>'Error',
@@ -43,12 +42,13 @@ class AddTypes extends Component
             ]);
             return;
         }
-        // if not added, add
         RoomType::create([
             'room_id'=>$this->selected_room_id,
             'type_id'=>$this->selected_type_id,
         ]);
-        $rates = Rate::where('branch_id',auth()->user()->branch_id)->get();
+        $rates = Rate::where('branch_id',auth()->user()->branch_id)
+                        ->where('type_id',$this->selected_type_id)
+                        ->get();
         foreach($rates as $rate){
             RoomRate::create([
                 'room_id'=>$this->selected_room_id,
@@ -65,7 +65,16 @@ class AddTypes extends Component
 
     public function removeType($id)
     {
-        RoomType::find($id)->delete();
+        $room_type = RoomType::where('id',$id)->first();
+        $rates = Rate::where('branch_id',auth()->user()->branch_id)
+                        ->where('type_id',$room_type->type_id)
+                        ->get();
+        foreach($rates as $rate){
+            RoomRate::where('room_id',$room_type->room_id)
+                    ->where('rate_id',$rate->id)
+                    ->delete();
+        }
+        $room_type->delete();
         $this->notification([
             'title'=>'Success',
             'description'=>'Type removed',

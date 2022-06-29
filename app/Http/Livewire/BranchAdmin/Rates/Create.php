@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\BranchAdmin\Rates;
 
 use Livewire\Component;
-use App\Models\{Rate,Branch};
+use App\Models\{Rate,Branch,RoomRate,RoomType};
 use WireUi\Traits\Actions;
 class Create extends Component
 {
@@ -38,17 +38,23 @@ class Create extends Component
     public function submitHandler()
     {
         $this->validate();
-        Rate::create([
+        $rate = Rate::create([
             'price'=>$this->price,
             'hours'=>$this->hours,
             'type_id'=>$this->type_id,
             'description'=>$this->description,
             'branch_id'=>auth()->user()->branch_id,
         ]);
+        $rooms = RoomType::where('type_id',$rate->type_id)->get();
+        foreach ($rooms as $key => $room) {
+            RoomRate::create([
+                'room_id'=>$room->id,
+                'rate_id'=>$rate->id,
+            ]);
+        }
         $this->reset([
-            'price','hours','type_id','description',
+            'price','hours','type_id','description','create_rate_modal',
         ]);
-        $this->create_rate_modal=false;
         $this->notification([
             'title'=>'Success',
             'description'=>'Rate created successfully',

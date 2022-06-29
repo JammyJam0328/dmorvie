@@ -67,10 +67,10 @@
             wire:model.defer="action_modal">
             <div class="grid p-5 space-y-3 bg-white rounded-lg">
                 <x-button wire:click="edit_action">
-                    Edit Branch
+                    Edit User
                 </x-button>
                 <x-button wire:click="delete_action">
-                    Delete Branch
+                    Delete User
                 </x-button>
             </div>
         </x-modal>
