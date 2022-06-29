@@ -3,18 +3,25 @@
 namespace App\Http\Livewire\FrontDesk\CheckIn;
 
 use Livewire\Component;
-
+use App\Models\{Customer,Transaction};
 class ViewDetails extends Component
 {
     public $qr_code='';
-    protected $listeners = ['search_qr' => 'search_qr'];
+    public $customer=null;
     public function render()
     {
         return view('livewire.front-desk.check-in.view-details');
     }
-    
-    public function search_qr($qr)
+
+    public function updatedQrCode()
     {
-        $this->qr_code=$qr;
+        if ($this->qr_code!='') {
+            $this->customer = Customer::query()
+                                                ->where('qr_code',$this->qr_code)
+                                                ->with(['transactions.transaction_type'])
+                                                ->first();
+        }else{
+            $this->customer = null;
+        }
     }
 }

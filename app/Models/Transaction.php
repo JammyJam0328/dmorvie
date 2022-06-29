@@ -9,4 +9,13 @@ class Transaction extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function transaction_type()
+    {
+        return $this->belongsTo(TransactionType::class);
+    }
 }
