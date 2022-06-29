@@ -94,7 +94,7 @@ class Kiosk extends Component
 
         $details = CheckInDetail::create([
             'customer_id' => $customer->id,
-            'room' => $room->room->id,
+            'room' => $room->id,
             'room_type' => $room_type,
             'hours' => $rate->rate->hours,
         ]);
