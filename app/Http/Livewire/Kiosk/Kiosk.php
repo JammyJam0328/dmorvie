@@ -100,6 +100,9 @@ class Kiosk extends Component
             'hours' => $rate->rate->hours,
         ]);
 
+        $room->update([
+            'status_id' => 5,
+        ]);
         $this->code = $transaction_code;
         $this->step = 5;
     }

@@ -57,6 +57,10 @@ class TypeSeeders extends Seeder
             'name' => 'Reserved',
             'description' => 'Room is reserved',
         ]);
+        Status::create([
+            'name' => 'Selected',
+            'description' => 'Room is selected',
+        ]);
 
     }
 }
