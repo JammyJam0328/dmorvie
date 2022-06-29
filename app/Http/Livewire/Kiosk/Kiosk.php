@@ -76,7 +76,6 @@ class Kiosk extends Component
             'branch_id' => auth()->user()->branch_id,
             'qr_code' => $transaction_code,
             'name' => $this->complete_name,
-            'check_in_time' => Carbon::now(),
         ]);
 
         $trans = Transaction::create([

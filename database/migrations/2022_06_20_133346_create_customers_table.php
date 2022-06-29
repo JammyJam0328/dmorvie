@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('branch_id');
             $table->string('qr_code');
             $table->string('name');
-            $table->string('check_in_time');
+            $table->string('check_in_time')->nullable();
             $table->string('check_out_time')->nullable();
             $table->timestamps();
         });
