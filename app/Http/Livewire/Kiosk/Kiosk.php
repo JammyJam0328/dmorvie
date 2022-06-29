@@ -96,6 +96,7 @@ class Kiosk extends Component
             'customer_id' => $customer->id,
             'room_id' => $room->id,
             'room_type' => $room_type,
+            'amount' => $trans->amount + $transs->amount,
             'hours' => $rate->rate->hours,
         ]);
 
