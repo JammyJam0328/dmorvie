@@ -91,6 +91,9 @@ Route::prefix('/kitchen')->middleware([
     Route::get('/',function(){
         return view('kitchen.dashboard');
     })->name('kitchen');
+    Route::get('/order',function(){
+        return view('kitchen.order');
+    })->name('kitchen.order');
 });
 
 

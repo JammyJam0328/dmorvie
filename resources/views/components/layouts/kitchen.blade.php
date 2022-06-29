@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="py-5 ">
                                   <ul role="list" class="grid grid-cols-1 gap-6 px-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2">
-                                    <a class=" {{Request::routeIs('kitchen') ? 'bg-gray-500 text-white' : 'text-gray-400'}} col-span-1 flex flex-col text-center cursor-pointer hover:bg-gray-500 hover:text-white bg-gray-100 rounded-2xl shadow-lg divide-y divide-gray-200">
+                                    <a href="{{route('kitchen')}}" class=" {{Request::routeIs('kitchen') ? 'bg-gray-500 text-white' : 'text-gray-400'}} col-span-1 flex flex-col text-center cursor-pointer hover:bg-gray-500 hover:text-white bg-gray-100 rounded-2xl shadow-lg divide-y divide-gray-200">
                                       <div class="flex-1 flex items-center flex-col p-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 20 20" fill="currentColor">
                                           <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
@@ -170,7 +170,7 @@
                                       </div>
                                     
                                     </a>
-                                    <a class="col-span-1 flex flex-col text-center cursor-pointer hover:bg-gray-500 hover:text-white text-gray-400 bg-gray-100 rounded-2xl shadow-lg divide-y divide-gray-200">
+                                    <a href="{{route('kitchen.order')}}" class="{{Request::routeIs('kitchen.order') ? 'bg-gray-500 text-white' : 'text-gray-400'}} col-span-1 flex flex-col text-center cursor-pointer hover:bg-gray-500 hover:text-white  bg-gray-100 rounded-2xl shadow-lg divide-y divide-gray-200">
                                       <div class="flex-1 flex items-center flex-col p-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 20 20" fill="currentColor">
                                           <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
@@ -249,12 +249,12 @@
                 </div>
             </div>
 
-           @if (Request::routeIs('kitchen.orders'))
+           @if (Request::routeIs('kitchen.order'))
            <div class=" bg-gray-300 pr-4 sm:pr-6 lg:pr-8 lg:flex-shrink-0  xl:pr-0">
             <div class="h-full pl-6  lg:w-80">
                 <!-- Start right column area -->
                 <div class="h-full relative" style="min-height: 16rem">
-                    <div class="absolute inset-0  bg-white  rounded-lg"></div>
+                    <div class="absolute inset-0  bg-white  rounded-lg">@yield('order-transaction')</div>
                 </div>
                 <!-- End right column area -->
             </div>
