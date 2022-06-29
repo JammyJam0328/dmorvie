@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TransactionType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DesignationAccountsSeeder::class);
         $this->call(TypeSeeders::class);
         $this->call(FloorSeeder::class);
-        $this->call(TransactionTypeSeeder::class);
+        $this->call(TransactionType::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
