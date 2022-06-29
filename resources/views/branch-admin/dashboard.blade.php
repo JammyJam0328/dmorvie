@@ -1,14 +1,17 @@
 <x-layouts.branch-admin>
     <div class="py-6">
-        <div class="flex items-center px-4 mx-auto space-x-3 max-w-7xl sm:px-6 md:px-8">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="h-10 fill-black">
-                <path fill="none"
-                    d="M0 0h24v24H0z" />
-                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
-            </svg>
-            <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+        <div class="flex items-center justify-between px-4 mx-auto space-x-3 max-w-7xl sm:px-6 md:px-8">
+            <div class="flex space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="h-10 fill-black">
+                    <path fill="none"
+                        d="M0 0h24v24H0z" />
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                </svg>
+                <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+            </div>
+            <x-branch.user-menu />
         </div>
         <div class="px-4 mx-auto mt-10 space-y-10 max-w-7xl sm:px-6 md:px-8">
             <div>
@@ -24,7 +27,7 @@
                     class="grid grid-cols-1 gap-6 px-10 py-5 bg-white border border-gray-300 rounded-xl sm:grid-cols-2 lg:grid-cols-4">
                     <li class="col-span-1 space-y-4 rounded-lg ">
                         <div class="flex">
-                            <div class="p-3 rounded-full bg-black">
+                            <div class="p-3 bg-black rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     class="h-10 fill-default-x">
@@ -44,7 +47,7 @@
                     </li>
                     <li class="col-span-1 space-y-4 rounded-lg ">
                         <div class="flex">
-                            <div class="p-3 rounded-full bg-black">
+                            <div class="p-3 bg-black rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     class="h-10 fill-default-x">
@@ -65,7 +68,7 @@
                     </li>
                     <li class="col-span-1 space-y-4 rounded-lg ">
                         <div class="flex">
-                            <div class="p-3 rounded-full bg-black">
+                            <div class="p-3 bg-black rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     class="h-10 fill-default-x">
@@ -85,7 +88,7 @@
                     </li>
                     <li class="col-span-1 space-y-4 rounded-lg ">
                         <div class="flex">
-                            <div class="p-3 rounded-full bg-black">
+                            <div class="p-3 bg-black rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     class="h-10 fill-default-x">
@@ -115,8 +118,8 @@
                         <div class="flex flex-col ">
                             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                                    <div class="overflow-hidden  md:rounded-xl">
-                                        <table class="min-w-full divide-y divide-gray-300 border border-gray-300">
+                                    <div class="overflow-hidden md:rounded-xl">
+                                        <table class="min-w-full border border-gray-300 divide-y divide-gray-300">
                                             <tbody class="bg-white divide-y divide-gray-100">
                                                 <tr class="hover:bg-gray-200">
                                                     <td
