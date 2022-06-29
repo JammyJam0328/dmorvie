@@ -21,7 +21,7 @@
     <div class="sm:w-full  p-2 space-y-3">
         <div id="customer_info">
             <div class="w-full bg-gradient-to-tr from-cyan-700 to-cyan-400  p-2 rounded-md text-gray-700 ">
-                @if ($customer != null)
+                @if ($customer != null && $customer->check_in_time == null)
                     <div>
                         <h2 class="sr-only">Billing Summary</h2>
                         <div class="bg-gray-100 sm:rounded-lg">
@@ -41,9 +41,19 @@
                                 </dl>
                                 <dl class="mt-8 divide-y divide-gray-200 text-sm lg:mt-0 lg:col-span-7">
                                     @foreach ($customer->transactions as $key => $transaction)
-                                        <div class="pb-4 flex items-center justify-between">
+                                        <div class="p-4 flex items-center justify-between">
                                             <dt class="text-gray-600">
-                                                @dump($transaction)
+                                                @switch($transaction->transaction_type_id)
+                                                    @case(1)
+                                                        Check In Room
+                                                    @break
+
+                                                    @case(2)
+                                                        TV remote + Room Key Deposit
+                                                    @break
+
+                                                    @default
+                                                @endswitch
                                             </dt>
                                             <dd class="font-medium text-gray-900">
                                                 {{ $transaction->amount }}
@@ -59,8 +69,14 @@
                                 </dl>
                             </div>
                             <div class="mt-4 flex justify-end space-x-3 p-2">
-                                <x-button cyan>
-                                    Check In
+                                <x-button cyan
+                                    flat>
+                                    Pay Deposit and Check In
+                                </x-button>
+                                <x-button wire:click="payAll"
+                                    spinner="payAll"
+                                    cyan>
+                                    Pay all and Check In
                                 </x-button>
                             </div>
                         </div>

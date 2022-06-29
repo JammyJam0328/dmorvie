@@ -13,4 +13,9 @@ class Customer extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+
+    public function check_in_detail()
+    {
+        return $this->hasOne(CheckInDetail::class);
+    }
 }

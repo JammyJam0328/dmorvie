@@ -26,5 +26,10 @@ class Room extends Model
     {
         return $this->hasMany(RoomType::class);
     }
+
+    public function check_in_details()
+    {
+        return $this->hasMany(CheckInDetail::class);
+    }
     
 }
