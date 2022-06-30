@@ -372,7 +372,13 @@
                 @break
             @case(2)
             <div class="max-w-7xl mx-auto mt-5">
-                
+                <button wire:click="closeTransaction" class="absolute -top-7 -right-6 rounded-full h-14 w-14 bg-white ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-full text-red-500" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
                 <div class="">
                     <ul role="list"
                         class="mx-auto  mt-2 sm:grid sm:grid-cols-2  sm:space-y-0 lg:grid-cols-2 lg:max-w-5xl">
@@ -455,9 +461,9 @@
                     <div class="mt-3 flex w-full " >
                         @if ($transactions->where('paid_at', null)->count() > 0)
                             <p class="text-lg text-white font-inter text-center">please pay your remaining balance  at the frontdesk. Thank you.</p>
-                            <button wire:click="checkOut" class="bg-white px-2 font-bold font-inter rounded text-gray-700 uppercase ">
+                            {{-- <button wire:click="checkOut" class="bg-white px-2 font-bold font-inter rounded text-gray-700 uppercase ">
                                 Checkout
-                            </button>
+                            </button> --}}
                             @else
                             <button wire:click="checkOut" class="bg-white px-2 font-bold font-inter rounded text-gray-700 uppercase ">
                                 Checkout

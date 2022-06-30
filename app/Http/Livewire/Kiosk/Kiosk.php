@@ -29,7 +29,7 @@ class Kiosk extends Component
     {
         return view('livewire.kiosk.kiosk', [
             'types' => Type::where('branch_id', auth()->user()->branch_id)->get(),
-            'rooms' =>$this->customer_transaction['roomtype'] ?  Room::whereHas('room_types', function($q){
+            'rooms' =>$this->customer_transaction['roomtype'] ?  Room::where('status_id',1)->whereHas('room_types', function($q){
                return  $q->where('type_id', $this->customer_transaction['roomtype']);
             })->get() : [],
             'rates' => $this->customer_transaction['room_id'] ? RoomRate::where('room_id', $this->customer_transaction['room_id'])->whereHas('rate', function($q){
