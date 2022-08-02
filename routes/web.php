@@ -97,6 +97,12 @@ Route::prefix('/kitchen')->middleware([
     Route::get('/order',function(){
         return view('kitchen.order');
     })->name('kitchen.order');
+    Route::get('/menu',function(){
+        return view('kitchen.menu');
+    })->name('kitchen.menu');
+    Route::get('/menu/manage/{id}',function(){
+        return view('kitchen.manage');
+    })->name('kitchen.manage');
 });
 
 

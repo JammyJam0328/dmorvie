@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TypeSeeders::class);
         $this->call(FloorSeeder::class);
         $this->call(TransactionTypeSeeder::class);
+        $this->call(FoodCategorySeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
